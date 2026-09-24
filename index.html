@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bagher Nikoufar | Water Resources Engineer & AI Researcher</title>
+    <style>
+        /* CSS Variables - Professional Water & Tech Theme */
+        :root {
+            --primary: #0f172a; /* Deep Slate */
+            --secondary: #1e3a8a; /* Deep Water Blue */
+            --accent: #3b82f6; /* Bright Blue */
+            --highlight: #f59e0b; /* Amber/Gold */
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* Menu Text Bold, Red Underline on Active/Hover */
+        .nav-links a {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: color 0.2s ease, border-bottom 0.2s ease;
+            padding-bottom: 5px;
+            position: relative;
+            border-bottom: 3px solid transparent; /* Pre-allocate space for underline */
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ef4444; /* Soft Red */
+            border-bottom-color: #ef4444;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--bg-light);
+            clip-path: ellipse(60% 50% at 50% 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Profile Image Styles */
+        .hero-image {
+            flex-shrink: 0;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--highlight);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            background-color: #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.03);
+            border-color: #d97706;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        #hero h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        #hero p.title {
+            font-size: 1.15rem;
+            color: #f87171; /* Soft Red */
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            max-width: 650px;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--highlight);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Headings */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--highlight);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .about-text strong {
+            color: var(--primary);
+        }
+
+        .highlight-box {
+            background: #fce7f3; /* Soft Pink */
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--accent);
+        }
+
+        .highlight-box h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .highlight-box ul li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Experience Section - Sky Blue */
+        #experience {
+            background-color: #e0f2fe;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #bae6fd;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 1rem 0 2rem 3rem;
+            position: relative;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 14px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 1.5rem;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #b45309;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        /* Research & Skills Section - Dark Blue */
+        #research {
+            background-color: #1e3a8a;
+            color: white;
+        }
+        
+        #research .section-title {
+            color: white;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            color: var(--text-main);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-light);
+            color: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        .skill-tag.ai {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border-color: #bfdbfe;
+        }
+
+        .skill-tag.eng {
+            background-color: #f0fdf4;
+            color: #166534;
+            border-color: #bbf7d0;
+        }
+
+        /* Applied Research Projects - Sky Blue */
+        .research-projects-card {
+            grid-column: 1 / -1;
+            margin-top: 1rem;
+            background-color: #e0f2fe;
+        }
+
+        .research-intro {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--highlight);
+            margin-bottom: 1.5rem;
+            direction: ltr;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .project-item {
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-left: 1rem;
+            border-left: 3px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .project-item:hover {
+            border-left-color: var(--accent);
+            background-color: rgba(255,255,255,0.5);
+            padding-left: 1.5rem;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project-title {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .project-date {
+            font-size: 0.8rem;
+            color: #b45309;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        /* Professional Memberships Card - Light Green */
+        .memberships-card {
+            grid-column: 1 / -1;
+            margin-top: 1.5rem;
+            background-color: #dcfce7; /* Light Green */
+        }
+
+        .memberships-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .memberships-card ul li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .memberships-card ul li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .memberships-card ul li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .membership-date {
+            color: #f87171; /* Soft Red */
+            font-weight: 700;
+            margin-right: 5px;
+            white-space: nowrap;
+        }
+
+        /* Certification List & Modal Styles */
+        .cert-item {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid var(--bg-light);
+            padding-bottom: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            padding-right: 70px;
+        }
+
+        .cert-item:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .view-icon {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.75rem;
+            background: var(--bg-light);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            color: var(--text-main);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .cert-item:hover .view-icon {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 95vw;
+            max-height: 95vh;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            font-size: 24px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: #ef4444;
+        }
+
+        #modal-body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+            background: #f1f5f9;
+        }
+
+        #modal-body img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        #modal-body iframe {
+            width: 85vw;
+            height: 90vh;
+            border: none;
+            background: white;
+        }
+
+        /* Gallery Section - Custom Pinkish-Green Background with Moving Stars */
+        #gallery {
+            background: linear-gradient(135deg, #fce7f3 0%, #e8f5e9 100%); /* Pinkish light green */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Moving Black Stars Background */
+        #gallery::before {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            /* Subtle black star pattern */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 5 L42 35 L75 40 L42 45 L40 75 L38 45 L5 40 L38 35 Z' fill='black' opacity='0.08'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+            animation: moveStars 30s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        @keyframes moveStars {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-60px, -60px); }
+        }
+
+        #gallery .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        #gallery p.gallery-intro {
+            text-align: justify;
+            text-justify: inter-word;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            height: 220px;
+            background-color: #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            opacity: 0.9;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1.5rem 1rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        #contact h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        #contact p {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: white;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .contact-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1120;
+            color: #64748b;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-image {
+                width: 200px;
+                height: 200px;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            #hero h1 {
+                font-size: 2.2rem;
+            }
+            .tagline {
+                margin: 0 auto 2rem;
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .about-grid, .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .timeline::after {
+                left: 15px;
+            }
+            .timeline-item {
+                padding-left: 2.5rem;
+            }
+            .timeline-item::after {
+                left: 9px;
+            }
+            #modal-body iframe {
+                width: 95vw;
+                height: 80vh;
+            }
+            .btn-outline {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Dr. Bagher Nikoufar</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#research">Research & Skills</a>
+                <a href="#memberships">Memberships</a>
+                <a href="#gallery">Field Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <!-- Placeholder for Profile Image. Save your photo as 'profile.jpg' in the same folder. -->
+            <div class="hero-image">
+                <img src="Nik1.jpg" alt="Dr. Bagher Nikoufar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'280\' height=\'280\' viewBox=\'0 0 280 280\'><rect fill=\'%23e2e8f0\' width=\'280\' height=\'280\'/><text fill=\'%2364748b\' font-family=\'sans-serif\' font-size=\'16\' x=\'50%\' y=\'50%\' text-anchor=\'middle\'>Profile Photo</text></svg>'">
+            </div>
+            <div class="hero-text">
+                <h1>Dr. Bagher Nikoufar</h1>
+                <!-- تغییر کلمه Expert به Specialist و تغییر رنگ به قرمز ملایم -->
+                <p class="title">Water Resources Engineer | AI & Data Science Researcher | Dam & Hydropower Operations Specialist</p>
+                <!-- تنظیم خطوط از دو طرف، خط کشی و تغییر عدد 24 به 25 -->
+                <p class="tagline">
+                    Bridging 25+ years of frontline engineering experience in water infrastructure with advanced Artificial Intelligence, Machine Learning, and Uncertainty Modeling to build climate-resilient water management systems.
+                </p>
+                <div class="hero-buttons">
+                    <!-- Linked to the actual PDF file provided -->
+                    <a href="CV-Bagher Nikoufar.pdf" download class="btn btn-primary">Download Full CV (PDF)</a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I am a water resources engineer with a PhD in Civil Engineering – Water Resources Management from the University of Tabriz. For over two decades, I have been at the forefront of water infrastructure management at the East Azerbaijan Regional Water Company (Ministry of Energy, Iran), currently serving as the <strong>Head of Operation and Maintenance of Dams and Hydropower Plants</strong>.</p>
+                <p>My career is defined by a dual commitment: managing large-scale physical water systems (dams, hydropower, water/wastewater treatment facilities) and pioneering the use of <strong>Artificial Intelligence and data-driven decision support systems</strong> to optimize them. I lead a 75-person department, overseeing provincial dam operations, instrumentation, rehabilitation, and water allocation under severe drought conditions.</p>
+                <p>Driven by the need to solve complex, real-world problems, my research focuses on integrating <strong>Z-Number theory, Fuzzy Logic, LSTM networks, and Machine Learning</strong> to address uncertainty in reservoir operation and climate adaptation. I am actively seeking global opportunities (such as the UK Global Talent visa) to apply my unique blend of practical engineering leadership and advanced AI research to international water challenges.</p>
+            </div>
+            <!-- تغییر رنگ پس‌زمینه باکس به صورتی ملایم -->
+            <div class="highlight-box">
+                <h4>Core Strengths for Global Impact:</h4>
+                <ul>
+                    <li><strong>Engineering Leadership:</strong> 25+ years managing dam safety, hydropower, and water treatment operations.</li>
+                    <li><strong>AI & Data Science:</strong> Proficient in Python, LSTM, ML, Z-Numbers, and developing AI-based decision-support tools.</li>
+                    <!-- اصلاح متن و پرانتزها به صورت یک خط -->
+                    <li><strong>Research Excellence:</strong> Published in top-tier journals (e.g., <em>Journal of Hydrology</em>), author of an upcoming book on AI and Z-Numbers.</li>
+                    <li><strong>Global Readiness:</strong> Advanced English, international certifications (University of Helsinki, DHI, ITC), and experience collaborating with UNESCO and Australian universities.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section - Sky Blue -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Nov 2003 – Present</div>
+                    <div class="timeline-content">
+                        <h3>Head of Operation and Maintenance of Dams and Hydropower Plants</h3>
+                        <h4>East Azerbaijan Regional Water Company, Tabriz, Iran</h4>
+                        <p>Lead a department of 75 engineering, operations, and maintenance staff across provincial dams and hydropower plants. Responsible for annual resource allocation (drinking water, irrigation, environmental flow, hydropower) in a drought-prone basin. Direct dam instrumentation and behavior monitoring, rehabilitation projects, and coordinate water delivery with agricultural and municipal stakeholders. Championing AI integration for operational efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2014 – Jan 2018</div>
+                    <div class="timeline-content">
+                        <h3>Project Manager, Small Hydropower Feasibility Programme</h3>
+                        <h4>East Azerbaijan Regional Water Company</h4>
+                        <p>Assessed water-energy potential across the provincial network. Compiled historical water-energy usage data as a baseline. Supervised construction and commissioning of small hydropower plants.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2014 – Oct 2018</div>
+                    <div class="timeline-content">
+                        <h3>Head of Surface Water Operation Working Group</h3>
+                        <h4>East Azerbaijan Regional Water Company</h4>
+                        <p>Established a streamlined route for operations staff to submit improvement ideas. Transformed the strongest proposals into funded applied research projects, ensuring findings were directly implemented into operating practices.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Nov 1997 – Nov 2003</div>
+                    <div class="timeline-content">
+                        <h3>Planning and Maintenance Officer, Irrigation Networks</h3>
+                        <h4>Zarine Round Irrigation Network Operating Company, Miyandoab, Iran</h4>
+                        <p>Managed day-to-day operation of the irrigation network, annual maintenance programmes, and water-delivery scheduling for network users.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Skills Section - Dark Blue -->
+    <section id="research" class="container">
+        <h2 class="section-title">Research, Skills & Certifications</h2>
+        <div class="grid-2col">
+            
+            <!-- Left Column: Research & Technical Skills -->
+            <div>
+                <!-- تغییر رنگ پس‌زمینه کارت به سبز کم رنگ -->
+                <div class="card" style="margin-bottom: 2rem; background-color: #dcfce7;">
+                    <h3>Research Focus & Publications</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-light); font-size: 0.95rem;">
+                        My research applies advanced machine learning (LSTM, Ensemble models) and fuzzy logic (Z-Numbers) to inflow forecasting, reservoir operation under uncertainty, and environmental water allocation. I have 12 peer-reviewed articles published in journals such as <em>Journal of Hydrology</em>, and an upcoming book on AI and Z-Number theory in water management.
+                    </p>
+                    <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                        <li>Optimizing reservoir operations with Z-numbers (Journal of Hydrology, 2025)</li>
+                        <li>Interpretable AI-based decision-support for adaptive reservoir operation (Journal of Hydrology, 2026)</li>
+                        <li>Uncertainty assessment of machine learning for multi-step inflow forecasting (Springer, 2025)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Technical Skills</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-main);">AI & Programming</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag ai">Python</span>
+                            <span class="skill-tag ai">Machine Learning</span>
+                            <span class="skill-tag ai">LSTM Networks</span>
+                            <span class="skill-tag ai">TensorFlow/PyTorch</span>
+                            <span class="skill-tag ai">MATLAB</span>
+                            <span class="skill-tag ai">GAMS / LINGO</span>
+                            <span class="skill-tag ai">Fuzzy Logic & Z-Numbers</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-main);">Engineering & Modelling</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag eng">MIKE 11 / MIKE 21</span>
+                            <span class="skill-tag eng">HEC-HMS / HEC-RAS</span>
+                            <span class="skill-tag eng">WEAP</span>
+                            <span class="skill-tag eng">ArcGIS / Google Earth Engine</span>
+                            <span class="skill-tag eng">Dam Safety & Instrumentation</span>
+                            <span class="skill-tag eng">Water/Wastewater Treatment</span>
+                            <span class="skill-tag eng">Hydropower O&M</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Certifications & Education -->
+            <div>
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3>Education</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="font-size: 1rem; color: var(--secondary);">PhD in Civil Engineering - Water Resources Management</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">University of Tabriz, Iran (2021 - 2025) | GPA: 18.85/20</p>
+                        <p style="font-size: 0.85rem; color: var(--text-light); font-style: italic;">Thesis: Application of Z-Numbers for the Optimal Operation of Reservoirs</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="font-size: 1rem; color: var(--secondary);">MSc in Civil Engineering - Marine Structures</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">Sahand University of Technology, Iran (1999 - 2002)</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1rem; color: var(--secondary);">BSc in Civil Engineering - Dam and Network Operation</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">Power and Water University of Technology, Iran (1992 - 1996)</p>
+                    </div>
+                </div>
+
+                <!-- تغییر رنگ پس‌زمینه کارت به صورتی کم رنگ -->
+                <div class="card" style="background-color: #fce7f3;">
+                    <h3>Key Certifications</h3>
+                    <ul style="list-style: none; color: var(--text-light); font-size: 0.9rem;">
+                        
+                        <li class="cert-item" onclick="openModal('cert-elements-of-ai.jpg', 'image')">
+                            <strong>Elements of AI (2 ECTS)</strong> – University of Helsinki & MinnaLearn (2025)
+                            <span class="view-icon">👁️ View</span>
+                        </li>
+                        
+                        <li class="cert-item" onclick="openModal('2.pdf', 'pdf')">
+                            <strong>One Million Prompts (Prompt Engineering)</strong> – Dubai Future Foundation & Dubai Centre for AI (2026)
+                            <span class="view-icon">👁️ View</span>
+                        </li>
+                        
+                        <li class="cert-item" onclick="openModal('cert-water-reform-australia.jpg', 'image')">
+                            <strong>The Water Reform Journey in Australia</strong> – University of Melbourne & Sharif University (2017)
+                            <span class="view-icon">👁️ View</span>
+                        </li>
+                        
+                        <li class="cert-item" onclick="openModal('cert-iwrm-itc.jpg', 'image')">
+                            <strong>Integrated Water Resources Management</strong> – ITC, Netherlands (2005)
+                            <span class="view-icon">👁️ View</span>
+                        </li>
+                        
+                        <li class="cert-item" onclick="openModal('cert-mike11-dhi.jpg', 'image')">
+                            <strong>MIKE 11 HD & Reservoir Modelling</strong> – DHI, Denmark (2005-2006)
+                            <span class="view-icon">👁️ View</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Applied Research Projects Section (Full Width) - Sky Blue -->
+        <div class="card research-projects-card" style="background-color: #e0f2fe;">
+            <h3>Applied Research Projects</h3>
+            
+            <div class="research-intro">
+                In the following research projects, I serve as the principal investigator and supervisor for the research projects contracted between the East Azerbaijan Regional Water Company and the University of Tabriz.
+            </div>
+
+            <div class="project-item">
+                <span class="project-title">Feasibility of deploying and operating artificial intelligence tools at East Azerbaijan Regional Water Company</span>
+                <span class="project-date">Jun 2024 – Sep 2026</span>
+                <p class="project-desc">Leading the study team. Mapping where AI can realistically support a public water agency and what that requires in practice: data readiness and quality, existing workflows, data governance, staff capability, user uptake, and the step from model output to an operational decision.</p>
+            </div>
+
+            <div class="project-item">
+                <span class="project-title">Optimising reservoir operation parameters for downstream water demand using AI and fuzzy logic, Nahand and Sattarkhan dams</span>
+                <span class="project-date">May 2026 – Present</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-title">Increasing the resilience of water supply systems and water facilities in East Azerbaijan province, passive defence approach</span>
+                <span class="project-date">Jun 2023 – May 2025</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-title">Developing and updating the operating rule curves of Alavian and Qaleh Chay dams in the Lake Urmia basin, for multiple competing water needs</span>
+                <span class="project-date">Jun 2022 – Sep 2024</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-title">Method for evaluating and costing technical and engineering services for dam maintenance</span>
+                <span class="project-date">Aug 2013 – Aug 2016</span>
+            </div>
+        </div>
+
+        <!-- Professional Memberships Section (Full Width) - Light Green -->
+        <div id="memberships" class="card memberships-card" style="background-color: #dcfce7; margin-top: 1.5rem;">
+            <h3>Professional Memberships</h3>
+            <ul>
+                <li><span class="membership-date">June 2021 – Present:</span> The main member of the Committee of Hydrography and Sedimentation of Iran.</li>
+                <li><span class="membership-date">Sep 2014 – Present:</span> The main member of the Committee of the Surface Water Protection and Exploitation of East Azerbaijan Regional Water Company.</li>
+                <li><span class="membership-date">Nov 2006 – Present:</span> The main member of the National Committee of Great Dams of Iran.</li>
+                <li><span class="membership-date">Aug 2012 – Present:</span> Member of the Engineering System of East Azerbaijan Province, Tabriz, Iran.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Gallery Section - Pinkish Green Background with Moving Stars -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Field Operations & Site Inspections</h2>
+            <p class="gallery-intro">
+                A glimpse into my daily work: leading O&M inspections, dam safety checklists, hydropower facility maintenance, and water/wastewater infrastructure assessments across East Azerbaijan province.
+                <br><br>
+                These inspections and technical evaluations are conducted systematically based on pre-established schedules and annual planning, as well as in response to emergency conditions. All site visits strictly follow standardized operation, maintenance, and hydromechanical guidelines, alongside comprehensive dam safety and stability control protocols, seamlessly integrated with Preventive Maintenance (PM) programs.
+                <br><br>
+                Examples of inspections, documentation, and operational monitoring are illustrated in the images below:
+            </p>
+            
+            <div class="gallery-grid">
+                <!-- Instructions for the user: Replace the src URLs with your actual image file names. 
+                     Ensure images are compressed (e.g., use tools like TinyPNG) before uploading. -->
+                
+                <div class="gallery-item">
+                    <img src="photo1.jpg" alt="Dam instrumentation inspection" loading="lazy">
+                    <div class="gallery-caption">Dam Instrumentation & Safety Review</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo2.jpg" alt="Hydropower plant maintenance" loading="lazy">
+                    <div class="gallery-caption">Hydropower Plant Maintenance</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo3.jpg" alt="Water treatment facility check" loading="lazy">
+                    <div class="gallery-caption">Water & Wastewater Facility Inspection</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo4.jpg" alt="Site visit with engineering team" loading="lazy">
+                    <div class="gallery-caption">Engineering Team Site Visit</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo5.jpg" alt="Reservoir operation check" loading="lazy">
+                    <div class="gallery-caption">Reservoir Operation & Monitoring</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo6.jpg" alt="Dam gate and valve inspection" loading="lazy">
+                    <div class="gallery-caption">Dam Gate & Valve Control Systems</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo7.jpg" alt="Pump station inspection" loading="lazy">
+                    <div class="gallery-caption">Pump Station & Conveyance Networks</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="photo8.jpg" alt="Tunnel and penstock inspection" loading="lazy">
+                    <div class="gallery-caption">Tunnel & Penstock Inspection</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Collaborate on Global Water Challenges</h2>
+            <!-- Updated text: Removed (UK) and added DSS collaboration -->
+            <p>I am actively seeking postdoctoral research positions, global talent opportunities, and international collaborations in AI-driven water management, climate resilience, smart infrastructure, and modern and optimal management and operation of water facilities based on DSS.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:baghernik@yahoo.com">
+                    📧 baghernik@yahoo.com
+                </a>
+                <a href="https://www.linkedin.com/in/bagher-nikoufar-b325a343" target="_blank">
+                    💼 LinkedIn Profile
+                </a>
+                <a href="https://www.researchgate.net/profile/Bagher-Nikoufar" target="_blank">
+                    🎓 ResearchGate
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dr. Bagher Nikoufar. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed for Global Talent & Academic Opportunities</p>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="cert-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modal-body">
+                <!-- Dynamic content goes here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functionality, Sound, and Scroll Spy -->
+    <script>
+        // --- 1. Click Sound (Soft, Thin, Tick-like) ---
+        function playClickSound() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+
+                oscillator.type = 'sine'; // Thin, clean sound
+                oscillator.frequency.setValueAtTime(1200, audioCtx.currentTime); // Higher pitch for a "tick"
+
+                gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // Quieter
+                gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.02); // Very rapid fade out
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + 0.02); // Very short duration
+            } catch (e) {
+                console.log("Audio context not supported or allowed yet.");
+            }
+        }
+
+        // --- 2. Modal Functions ---
+        function openModal(url, type) {
+            const modal = document.getElementById('cert-modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            let content = '';
+            if (type === 'image') {
+                content = `<img src="${url}" alt="Certification Document" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'600\\' height=\\'400\\' viewBox=\\'0 0 600 400\\'><rect fill=\\'%23f8fafc\\' width=\\'600\\' height=\\'400\\'/><text fill=\\'%2364748b\\' font-family=\\'sans-serif\\' font-size=\\'16\\' x=\\'50%\\' y=\\'50%\\' text-anchor=\\'middle\\'>Image not found: ${url}<br/>Please ensure the file is in the same directory.</text></svg>'">`;
+            } else if (type === 'pdf') {
+                content = `<iframe src="${url}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf"></iframe>`;
+            }
+            
+            modalBody.innerHTML = content;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('cert-modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+            
+            setTimeout(() => {
+                modalBody.innerHTML = '';
+            }, 300);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // --- 3. Scroll Spy (Active Menu Item) ---
+        const sections = document.querySelectorAll('section, #memberships');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Using 150px offset to account for the fixed navbar
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // --- 4. Attach Click Sound and Handle Active Class ---
+        navLinks.forEach(link => {
+            // When hovering over a new link, remove active class from all links
+            // This makes the previous red color return to normal before the next click
+            link.addEventListener('mouseenter', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+            });
+
+            link.addEventListener('click', function() {
+                playClickSound();
+                
+                // Immediately set active class on click for better UX
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Trigger scroll event on load to set the correct active link
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+
+</body>
+</html>
